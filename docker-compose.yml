@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  api:
+    image: node:12-alpine
+    command: >
+      sh -c "yarn && yarn start"
+    volumes:
+      - .:/src
+      - ./node_modules:/src/node_modules
+    working_dir: /src
+    ports:
+      - "3000:3000"
